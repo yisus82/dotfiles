@@ -91,7 +91,7 @@ ENABLE_CORRECTION="true"
 HIST_STAMPS="mm/dd/yyyy"
 
 # Plugins to load
-plugins=(git virtualenv)
+plugins=(brew bundler catimg common-aliases encode64 extract gem git git-extras github history jsontools last-working-dir ng npm osx pip pyenv pylint python sudo vagrant vscode yarn z)
 
 export ZSH="$HOME/.oh-my-zsh"
 source $ZSH/oh-my-zsh.sh
