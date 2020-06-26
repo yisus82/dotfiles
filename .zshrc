@@ -86,12 +86,16 @@ HIST_STAMPS="dd.mm.yyyy"
 # Would you like to use another custom folder than $ZSH/custom?
 # ZSH_CUSTOM=/path/to/new-custom-folder
 
+# SSH-Agent plugin configuration
+zstyle :omz:plugins:ssh-agent agent-forwarding on
+zstyle :omz:plugins:ssh-agent identities id_rsa
+
 # Which plugins would you like to load?
 # Standard plugins can be found in $ZSH/plugins/
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(brew bundler catimg common-aliases encode64 extract gem git git-extras github history jsontools last-working-dir ng npm osx pip pyenv pylint python sudo vagrant vscode yarn z zsh-autosuggestions zsh-nvm zsh-syntax-highlighting)
+plugins=(brew bundler catimg common-aliases encode64 extract gem git git-extras github history jsontools last-working-dir ng npm osx pip pyenv pylint python ssh-agent sudo vagrant vscode yarn z zsh-autosuggestions zsh-nvm zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
 
