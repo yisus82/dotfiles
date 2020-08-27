@@ -1,0 +1,15 @@
+[user]
+	email = djalma8@gmail.com
+	name = Jesús Ángel Pérez-Roca Fernández
+[help]
+	autocorrect = 50
+[diff]
+	tool = meld
+[difftool "meld"]
+	cmd = /mnt/d/Programas/Meld/Meld.exe "$(wslpath -aw $LOCAL)" "$(wslpath -aw $REMOTE)"
+[mergetool]
+	tool = meld
+[mergetool "meld"]
+	cmd = /mnt/d/Programas/Meld/Meld.exe "$(wslpath -aw $BASE)" "$(wslpath -aw $LOCAL)" "$(wslpath -aw $REMOTE)" "$(wslpath -aw $MERGED)"
+[mergetool "meld"]
+	trustexitcode = false
