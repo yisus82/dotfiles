@@ -1,3 +1,5 @@
+# Fig pre block. Keep at the top of this file.
+[[ -f "$HOME/.fig/shell/zshrc.pre.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.pre.zsh"
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
@@ -148,11 +150,13 @@ HEROKU_AC_ZSH_SETUP_PATH=/Users/yisus82/Library/Caches/heroku/autocomplete/zsh_s
 
 export ANDROID_SDK_ROOT="/Users/yisus82/Library/Android/sdk"
 export ANDROID_HOME="/Users/yisus82/Library/Android/sdk"
+export JAVA_HOME=/usr/local/opt/openjdk/bin/java
 export PATH=$ANDROID_SDK_ROOT/emulator:$ANDROID_SDK_ROOT/tools:$PATH
 export PATH="/usr/local/opt/ruby/bin:$PATH"
 export LDFLAGS="-L/usr/local/opt/ruby/lib"
 export CPPFLAGS="-I/usr/local/opt/ruby/include"
-export PATH=$PATH:$(ruby -e 'puts Gem.bindir')
+export PATH="$(ruby -e 'puts Gem.bindir'):$PATH"
+export NODE_EXTRA_CA_CERTS="$(mkcert -CAROOT)/rootCA.pem"
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
@@ -169,5 +173,25 @@ fi
 unset __conda_setup
 # <<< conda initialize <<<
 
-
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+
+# Go config
+export GOPATH=$HOME/go
+export GOROOT="$(brew --prefix golang)/libexec"
+export PATH="$PATH:${GOPATH}/bin:${GOROOT}/bin"
+
+# Postgres config
+export PGDATA="/usr/local/var/postgres"
+
+# Autoconf config
+export PATH="/usr/local/opt/autoconf@2.69/bin:$PATH"
+export PATH="/usr/local/opt/openjdk/bin:$PATH"
+
+# Flutter
+export PATH="/usr/local/Caskroom/flutter/2.5.2/flutter/bin:$PATH"
+
+# Fig post block. Keep at the bottom of this file.
+[[ -f "$HOME/.fig/shell/zshrc.post.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.post.zsh"
+
+# PyEnv
+eval "$(pyenv init -)"
