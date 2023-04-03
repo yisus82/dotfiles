@@ -137,7 +137,7 @@ alias lc="colorls -lA --sd"
 alias meld="/Applications/Meld.app/Contents/MacOS/Meld"
 alias code="code-insiders"
 alias kafka-start="kafka-server-start /usr/local/etc/kafka/server.properties"
-alias zookeper-start="zookeeper-server-start /usr/local/opt/kafka/libexec/config/zookeeper.properties"
+alias zookeeper-start="zookeeper-server-start /usr/local/opt/kafka/libexec/config/zookeeper.properties"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
