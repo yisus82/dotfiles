@@ -131,11 +131,13 @@ source $ZSH/oh-my-zsh.sh
 # For a full list of active aliases, run `alias`.
 #
 # Example aliases
-# alias zshconfig="mate ~/.zshrc"
+alias zshconfig="nano ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias lc="colorls -lA --sd"
 alias meld="/Applications/Meld.app/Contents/MacOS/Meld"
 alias code="code-insiders"
+alias kafka-start="kafka-server-start /usr/local/etc/kafka/server.properties"
+alias zookeper-start="zookeeper-server-start /usr/local/opt/kafka/libexec/config/zookeeper.properties"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
@@ -195,3 +197,6 @@ export PATH="/usr/local/Caskroom/flutter/2.5.2/flutter/bin:$PATH"
 
 # PyEnv
 eval "$(pyenv init -)"
+
+# Kafka
+export PATH="/usr/local/opt/kafka/bin/:$PATH"
