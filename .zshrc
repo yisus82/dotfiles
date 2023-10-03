@@ -104,7 +104,7 @@ HIST_STAMPS="dd.mm.yyyy"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(asdf brew bundler catimg common-aliases encode64 extract gem git git-extras github history jsontools last-working-dir ng npm osx pip pyenv pylint python ssh-agent sudo vagrant vscode yarn z zsh-autosuggestions zsh-nvm zsh-syntax-highlighting)
+plugins=(brew bundler catimg common-aliases encode64 extract gem git git-extras github history jsontools last-working-dir ng npm osx pip pyenv pylint python ssh-agent sudo vagrant vscode yarn z zsh-autosuggestions zsh-nvm zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -200,3 +200,6 @@ eval "$(pyenv init -)"
 
 # Kafka
 export PATH="/usr/local/opt/kafka/bin/:$PATH"
+
+# asdf
+. /usr/local/opt/asdf/libexec/asdf.sh
