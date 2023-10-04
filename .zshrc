@@ -203,3 +203,12 @@ export PATH="/usr/local/opt/kafka/bin/:$PATH"
 
 # asdf
 . /usr/local/opt/asdf/libexec/asdf.sh
+
+# icu4c
+export PATH="/opt/homebrew/opt/icu4c/bin:$PATH"
+export PATH="/opt/homebrew/opt/icu4c/sbin:$PATH"
+export LDFLAGS="-L/opt/homebrew/opt/icu4c/lib"
+export CPPFLAGS="-I/opt/homebrew/opt/icu4c/include"
+
+# pkg-config
+export PKG_CONFIG_PATH="/opt/homebrew/opt/icu4c/lib/pkgconfig:$PKG_CONFIG_PATH"
