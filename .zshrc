@@ -104,7 +104,7 @@ HIST_STAMPS="dd.mm.yyyy"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(brew bundler catimg common-aliases encode64 extract gem git git-extras github history jsontools last-working-dir ng npm osx pip pyenv pylint python ssh-agent sudo vagrant vscode yarn z zsh-autosuggestions zsh-nvm zsh-syntax-highlighting)
+plugins=(catimg extract jsontools last-working-dir pyenv ssh-agent sudo zsh-autosuggestions zsh-nvm zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -145,35 +145,15 @@ alias zookeeper-start="zookeeper-server-start /usr/local/opt/kafka/libexec/confi
 export NVM_DIR="/Users/yisus82/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
 
-source /usr/local/opt/git-extras/share/git-extras/git-extras-completion.zsh
-
-# heroku autocomplete setup
-HEROKU_AC_ZSH_SETUP_PATH=/Users/yisus82/Library/Caches/heroku/autocomplete/zsh_setup && test -f $HEROKU_AC_ZSH_SETUP_PATH && source $HEROKU_AC_ZSH_SETUP_PATH;
-
 export ANDROID_SDK_ROOT="/Users/yisus82/Library/Android/sdk"
 export ANDROID_HOME="/Users/yisus82/Library/Android/sdk"
 export JAVA_HOME=/usr/local/opt/openjdk/bin/java
 export PATH=$ANDROID_SDK_ROOT/emulator:$ANDROID_SDK_ROOT/tools:$PATH
 export PATH="/usr/local/opt/ruby/bin:$PATH"
-export LDFLAGS="-L/usr/local/opt/ruby/lib"
-export CPPFLAGS="-I/usr/local/opt/ruby/include"
+export LDFLAGS="$LDFLAGS -L/usr/local/opt/ruby/lib"
+export CPPFLAGS="$CPPFLAGS -I/usr/local/opt/ruby/include"
 export PATH="$(ruby -e 'puts Gem.bindir'):$PATH"
 export NODE_EXTRA_CA_CERTS="$(mkcert -CAROOT)/rootCA.pem"
-
-# >>> conda initialize >>>
-# !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/Users/yisus82/opt/anaconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
-if [ $? -eq 0 ]; then
-    eval "$__conda_setup"
-else
-    if [ -f "/Users/yisus82/opt/anaconda3/etc/profile.d/conda.sh" ]; then
-        . "/Users/yisus82/opt/anaconda3/etc/profile.d/conda.sh"
-    else
-        export PATH="/Users/yisus82/opt/anaconda3/bin:$PATH"
-    fi
-fi
-unset __conda_setup
-# <<< conda initialize <<<
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
@@ -198,17 +178,26 @@ export PATH="/usr/local/Caskroom/flutter/2.5.2/flutter/bin:$PATH"
 # PyEnv
 eval "$(pyenv init -)"
 
-# Kafka
-export PATH="/usr/local/opt/kafka/bin/:$PATH"
-
 # asdf
 . /usr/local/opt/asdf/libexec/asdf.sh
 
 # icu4c
-export PATH="/opt/homebrew/opt/icu4c/bin:$PATH"
-export PATH="/opt/homebrew/opt/icu4c/sbin:$PATH"
-export LDFLAGS="-L/opt/homebrew/opt/icu4c/lib"
-export CPPFLAGS="-I/opt/homebrew/opt/icu4c/include"
+export PATH="/usr/local/opt/icu4c/bin:$PATH"
+export PATH="/usr/local/opt/icu4c/sbin:$PATH"
+export LDFLAGS="$LDFLAGS -L/usr/local/opt/icu4c/lib"
+export CPPFLAGS="$CPPFLAGS -I/usr/local/opt/icu4c/include"
 
 # pkg-config
-export PKG_CONFIG_PATH="/opt/homebrew/opt/icu4c/lib/pkgconfig:$PKG_CONFIG_PATH"
+export PKG_CONFIG_PATH="/usr/local/opt/icu4c/lib/pkgconfig:$PKG_CONFIG_PATH"
+
+
+# bun completions
+[ -s "/Users/yisus82/.bun/_bun" ] && source "/Users/yisus82/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
+
+# bum
+export BUM_INSTALL="$HOME/.bum"
+export PATH="$BUM_INSTALL/bin:$PATH"
