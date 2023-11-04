@@ -136,14 +136,21 @@ alias zshconfig="nano ~/.zshrc"
 alias lc="colorls -lA --sd"
 alias meld="/Applications/Meld.app/Contents/MacOS/Meld"
 alias code="code-insiders"
-alias kafka-start="kafka-server-start /usr/local/etc/kafka/server.properties"
-alias zookeeper-start="zookeeper-server-start /usr/local/opt/kafka/libexec/config/zookeeper.properties"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
+# NVM
 export NVM_DIR="/Users/yisus82/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
+
+nvm_upgrade() {
+  (
+    cd "$NVM_DIR"
+    git fetch --tags origin
+    git checkout `git describe --abbrev=0 --tags --match "v[0-9]*" $(git rev-list --tags --max-count=1)`
+  ) && \. "$NVM_DIR/nvm.sh"
+}
 
 export ANDROID_SDK_ROOT="/Users/yisus82/Library/Android/sdk"
 export ANDROID_HOME="/Users/yisus82/Library/Android/sdk"
