@@ -160,7 +160,6 @@ export PATH="/usr/local/opt/ruby/bin:$PATH"
 export LDFLAGS="$LDFLAGS -L/usr/local/opt/ruby/lib"
 export CPPFLAGS="$CPPFLAGS -I/usr/local/opt/ruby/include"
 export PATH="$(ruby -e 'puts Gem.bindir'):$PATH"
-export NODE_EXTRA_CA_CERTS="$(mkcert -CAROOT)/rootCA.pem"
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
