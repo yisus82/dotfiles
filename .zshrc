@@ -134,7 +134,6 @@ source $ZSH/oh-my-zsh.sh
 alias zshconfig="nano ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias lc="colorls -lA --sd"
-alias meld="/Applications/Meld.app/Contents/MacOS/Meld"
 alias code="code-insiders"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
