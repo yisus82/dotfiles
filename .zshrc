@@ -35,7 +35,7 @@ man() {
 }
 
 # If you come from bash you might have to change your $PATH.
-# export PATH=$HOME/bin:/usr/local/bin:$PATH
+# export PATH=$HOME/bin:$HOMEBREW_PREFIX/bin:$PATH
 
 # Path to your oh-my-zsh installation.
 export ZSH="/Users/yisus82/.oh-my-zsh"
@@ -110,7 +110,7 @@ source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
-# export MANPATH="/usr/local/man:$MANPATH"
+# export MANPATH="$HOMEBREW_PREFIX/man:$MANPATH"
 
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
@@ -153,11 +153,11 @@ nvm_upgrade() {
 
 export ANDROID_SDK_ROOT="/Users/yisus82/Library/Android/sdk"
 export ANDROID_HOME="/Users/yisus82/Library/Android/sdk"
-export JAVA_HOME=/usr/local/opt/openjdk/bin/java
+export JAVA_HOME=$HOMEBREW_PREFIX/opt/openjdk/bin/java
 export PATH=$ANDROID_SDK_ROOT/emulator:$ANDROID_SDK_ROOT/tools:$PATH
-export PATH="/usr/local/opt/ruby/bin:$PATH"
-export LDFLAGS="$LDFLAGS -L/usr/local/opt/ruby/lib"
-export CPPFLAGS="$CPPFLAGS -I/usr/local/opt/ruby/include"
+export PATH="$HOMEBREW_PREFIX/opt/ruby/bin:$PATH"
+export LDFLAGS="$LDFLAGS -L$HOMEBREW_PREFIX/opt/ruby/lib"
+export CPPFLAGS="$CPPFLAGS -I$HOMEBREW_PREFIX/opt/ruby/include"
 export PATH="$(ruby -e 'puts Gem.bindir'):$PATH"
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
@@ -168,18 +168,15 @@ export GOROOT="$(brew --prefix golang)/libexec"
 export PATH="$PATH:${GOPATH}/bin:${GOROOT}/bin"
 
 # Postgres config
-export PGDATA="/usr/local/var/postgres"
+export PGDATA="$HOMEBREW_PREFIX/var/postgres"
 export PATH="/opt/homebrew/opt/postgresql@16/bin:$PATH"
 
 # Autoconf config
-export PATH="/usr/local/opt/autoconf@2.69/bin:$PATH"
-export PATH="/usr/local/opt/openjdk/bin:$PATH"
+export PATH="$HOMEBREW_PREFIX/opt/autoconf@2.69/bin:$PATH"
+export PATH="$HOMEBREW_PREFIX/opt/openjdk/bin:$PATH"
 
 # Flutter
-export PATH="/usr/local/Caskroom/flutter/2.5.2/flutter/bin:$PATH"
-
-# Fig post block. Keep at the bottom of this file.
-[[ -f "$HOME/.fig/shell/zshrc.post.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.post.zsh"
+export PATH="$HOMEBREW_PREFIX/Caskroom/flutter/2.5.2/flutter/bin:$PATH"
 
 # PyEnv
 eval "$(pyenv init -)"
@@ -188,13 +185,13 @@ eval "$(pyenv init -)"
 . $HOMEBREW_PREFIX/opt/asdf/libexec/asdf.sh
 
 # icu4c
-export PATH="/usr/local/opt/icu4c/bin:$PATH"
-export PATH="/usr/local/opt/icu4c/sbin:$PATH"
-export LDFLAGS="$LDFLAGS -L/usr/local/opt/icu4c/lib"
-export CPPFLAGS="$CPPFLAGS -I/usr/local/opt/icu4c/include"
+export PATH="$HOMEBREW_PREFIX/opt/icu4c/bin:$PATH"
+export PATH="$HOMEBREW_PREFIX/opt/icu4c/sbin:$PATH"
+export LDFLAGS="$LDFLAGS -L$HOMEBREW_PREFIX/opt/icu4c/lib"
+export CPPFLAGS="$CPPFLAGS -I$HOMEBREW_PREFIX/opt/icu4c/include"
 
 # pkg-config
-export PKG_CONFIG_PATH="/usr/local/opt/icu4c/lib/pkgconfig:$PKG_CONFIG_PATH"
+export PKG_CONFIG_PATH="$HOMEBREW_PREFIX/opt/icu4c/lib/pkgconfig:$PKG_CONFIG_PATH"
 
 
 # bun completions
@@ -207,3 +204,6 @@ export PATH="$BUN_INSTALL/bin:$PATH"
 # bum
 export BUM_INSTALL="$HOME/.bum"
 export PATH="$BUM_INSTALL/bin:$PATH"
+
+# Fig post block. Keep at the bottom of this file.
+[[ -f "$HOME/.fig/shell/zshrc.post.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.post.zsh"
