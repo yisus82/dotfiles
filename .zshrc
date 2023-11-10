@@ -169,6 +169,7 @@ export PATH="$PATH:${GOPATH}/bin:${GOROOT}/bin"
 
 # Postgres config
 export PGDATA="/usr/local/var/postgres"
+export PATH="/opt/homebrew/opt/postgresql@16/bin:$PATH"
 
 # Autoconf config
 export PATH="/usr/local/opt/autoconf@2.69/bin:$PATH"
