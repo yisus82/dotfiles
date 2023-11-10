@@ -184,7 +184,7 @@ export PATH="/usr/local/Caskroom/flutter/2.5.2/flutter/bin:$PATH"
 eval "$(pyenv init -)"
 
 # asdf
-. /usr/local/opt/asdf/libexec/asdf.sh
+. $HOMEBREW_PREFIX/opt/asdf/libexec/asdf.sh
 
 # icu4c
 export PATH="/usr/local/opt/icu4c/bin:$PATH"
