@@ -34,6 +34,12 @@ man() {
 	      man "$@"
 }
 
+# Terminal language
+export LANG=en_US.UTF-8
+
+# Gradle
+export GRADLE_USER_HOME=/opt/homebrew/Cellar/gradle/8.4 
+
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:$HOMEBREW_PREFIX/bin:$PATH
 
@@ -153,7 +159,7 @@ nvm_upgrade() {
 
 export ANDROID_SDK_ROOT="/Users/yisus82/Library/Android/sdk"
 export ANDROID_HOME="/Users/yisus82/Library/Android/sdk"
-export JAVA_HOME=$HOMEBREW_PREFIX/opt/openjdk/bin/java
+export JAVA_HOME=$HOMEBREW_PREFIX/Cellar/openjdk/21.0.1
 export PATH=$ANDROID_SDK_ROOT/emulator:$ANDROID_SDK_ROOT/tools:$PATH
 export PATH="$HOMEBREW_PREFIX/opt/ruby/bin:$PATH"
 export LDFLAGS="$LDFLAGS -L$HOMEBREW_PREFIX/opt/ruby/lib"
