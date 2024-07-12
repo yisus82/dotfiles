@@ -1,5 +1,5 @@
-# Fig pre block. Keep at the top of this file.
-[[ -f "$HOME/.fig/shell/zshrc.pre.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.pre.zsh"
+# Q pre block. Keep at the top of this file.
+[[ -f "${HOME}/Library/Application Support/amazon-q/shell/zshrc.pre.zsh" ]] && builtin source "${HOME}/Library/Application Support/amazon-q/shell/zshrc.pre.zsh"
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
@@ -159,12 +159,13 @@ nvm_upgrade() {
 
 export ANDROID_SDK_ROOT="/Users/yisus82/Library/Android/sdk"
 export ANDROID_HOME="/Users/yisus82/Library/Android/sdk"
-export JAVA_HOME=$HOMEBREW_PREFIX/Cellar/openjdk/21.0.1
+export JAVA_HOME=$HOMEBREW_PREFIX/opt/openjdk
 export PATH=$ANDROID_SDK_ROOT/emulator:$ANDROID_SDK_ROOT/tools:$PATH
 export PATH="$HOMEBREW_PREFIX/opt/ruby/bin:$PATH"
 export LDFLAGS="$LDFLAGS -L$HOMEBREW_PREFIX/opt/ruby/lib"
 export CPPFLAGS="$CPPFLAGS -I$HOMEBREW_PREFIX/opt/ruby/include"
 export PATH="$(ruby -e 'puts Gem.bindir'):$PATH"
+export LC_ALL=en_US.UTF-8
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
@@ -199,7 +200,6 @@ export CPPFLAGS="$CPPFLAGS -I$HOMEBREW_PREFIX/opt/icu4c/include"
 # pkg-config
 export PKG_CONFIG_PATH="$HOMEBREW_PREFIX/opt/icu4c/lib/pkgconfig:$PKG_CONFIG_PATH"
 
-
 # bun completions
 [ -s "/Users/yisus82/.bun/_bun" ] && source "/Users/yisus82/.bun/_bun"
 
@@ -211,5 +211,14 @@ export PATH="$BUN_INSTALL/bin:$PATH"
 export BUM_INSTALL="$HOME/.bum"
 export PATH="$BUM_INSTALL/bin:$PATH"
 
-# Fig post block. Keep at the bottom of this file.
-[[ -f "$HOME/.fig/shell/zshrc.post.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.post.zsh"
+# Load Angular CLI autocompletion.
+source <(ng completion script)
+
+[[ -f "$HOME/fig-export/dotfiles/dotfile.zsh" ]] && builtin source "$HOME/fig-export/dotfiles/dotfile.zsh"
+
+# Q post block. Keep at the bottom of this file.
+[[ -f "${HOME}/Library/Application Support/amazon-q/shell/zshrc.post.zsh" ]] && builtin source "${HOME}/Library/Application Support/amazon-q/shell/zshrc.post.zsh"
+export MODULAR_HOME="/Users/yisus82/.modular"
+export PATH="/Users/yisus82/.modular/pkg/packages.modular.com_mojo/bin:$PATH"
+
+PATH=~/.console-ninja/.bin:$PATH
