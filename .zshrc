@@ -214,6 +214,12 @@ export PATH="$BUM_INSTALL/bin:$PATH"
 # Load Angular CLI autocompletion.
 source <(ng completion script)
 
+# ollama
+export OLLAMA_MODELS="/Volumes/Trascend/ollama/models"
+
+# dart
+export PATH="$PATH":"$HOME/.pub-cache/bin"
+
 [[ -f "$HOME/fig-export/dotfiles/dotfile.zsh" ]] && builtin source "$HOME/fig-export/dotfiles/dotfile.zsh"
 
 # Q post block. Keep at the bottom of this file.
