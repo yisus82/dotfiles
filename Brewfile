@@ -58,6 +58,7 @@ brew "mongosh"
 brew "mysql", restart_service: true
 brew "mysql@8.4"
 brew "nano"
+brew "neofetch"
 brew "nghttp2"
 brew "nmap"
 brew "nss"
