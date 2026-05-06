@@ -1,5 +1,6 @@
+# Kiro CLI pre block. Keep at the top of this file.
+[[ -f "${HOME}/Library/Application Support/kiro-cli/shell/zshrc.pre.zsh" ]] && builtin source "${HOME}/Library/Application Support/kiro-cli/shell/zshrc.pre.zsh"
 # Q pre block. Keep at the top of this file.
-[[ -f "${HOME}/Library/Application Support/amazon-q/shell/zshrc.pre.zsh" ]] && builtin source "${HOME}/Library/Application Support/amazon-q/shell/zshrc.pre.zsh"
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
@@ -141,6 +142,8 @@ alias zshconfig="nano ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias lc="colorls -lA --sd"
 alias code="code-insiders --profile Yisus"
+# alias docker-compose="docker compose --compatibility $@"
+alias laravel="$HOME/.composer/vendor/bin/laravel"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
@@ -189,7 +192,8 @@ export PATH="$HOMEBREW_PREFIX/Caskroom/flutter/2.5.2/flutter/bin:$PATH"
 eval "$(pyenv init -)"
 
 # asdf
-. $HOMEBREW_PREFIX/opt/asdf/libexec/asdf.sh
+export ASDF_DATA_DIR="$HOME/.asdf"
+export PATH="$ASDF_DATA_DIR/shims:$PATH"
 
 # icu4c
 export PATH="$HOMEBREW_PREFIX/opt/icu4c/bin:$PATH"
@@ -211,9 +215,6 @@ export PATH="$BUN_INSTALL/bin:$PATH"
 export BUM_INSTALL="$HOME/.bum"
 export PATH="$BUM_INSTALL/bin:$PATH"
 
-# Load Angular CLI autocompletion.
-source <(ng completion script)
-
 # ollama
 export OLLAMA_MODELS="/Volumes/Trascend/ollama/models"
 
@@ -222,9 +223,15 @@ export PATH="$PATH":"$HOME/.pub-cache/bin"
 
 [[ -f "$HOME/fig-export/dotfiles/dotfile.zsh" ]] && builtin source "$HOME/fig-export/dotfiles/dotfile.zsh"
 
-# Q post block. Keep at the bottom of this file.
-[[ -f "${HOME}/Library/Application Support/amazon-q/shell/zshrc.post.zsh" ]] && builtin source "${HOME}/Library/Application Support/amazon-q/shell/zshrc.post.zsh"
+PATH=~/.console-ninja/.bin:$PATH
+
+# Laravel
+export PATH=“$HOME/.composer/vendor/bin:$PATH”
+
 export MODULAR_HOME="/Users/yisus82/.modular"
 export PATH="/Users/yisus82/.modular/pkg/packages.modular.com_mojo/bin:$PATH"
 
-PATH=~/.console-ninja/.bin:$PATH
+# Q post block. Keep at the bottom of this file.
+
+# Kiro CLI post block. Keep at the bottom of this file.
+[[ -f "${HOME}/Library/Application Support/kiro-cli/shell/zshrc.post.zsh" ]] && builtin source "${HOME}/Library/Application Support/kiro-cli/shell/zshrc.post.zsh"
