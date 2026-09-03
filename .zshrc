@@ -9,7 +9,7 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
 fi
 
 # Show OS info when opening a new terminal
-neofetch
+fastfetch
 
 # SSH-Agent plugin configuration
 zstyle :omz:plugins:ssh-agent agent-forwarding on
@@ -144,6 +144,7 @@ alias lc="colorls -lA --sd"
 alias code="code-insiders --profile Yisus"
 # alias docker-compose="docker compose --compatibility $@"
 alias laravel="$HOME/.composer/vendor/bin/laravel"
+alias rmds="rm -rf .DS_Store"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
